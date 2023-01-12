@@ -1,0 +1,11 @@
+1673535866297	geckodriver	INFO	Listening on 127.0.0.1:57205
+1673535866805	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "60959" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileYm4BEA"
+1673535867959	Marionette	INFO	Marionette enabled
+1673535867963	Marionette	INFO	Listening on port 40615
+Read port: 40615
+WebDriver BiDi listening on ws://127.0.0.1:60959
+1673535868105	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileYm4BEA/search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:60959/devtools/browser/e9adbe6d-ba3c-410f-ab3d-c79547720b87
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://bookyourcourt.psm.tu.ac.th."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://bookyourcourt.psm.tu.ac.th."

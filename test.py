@@ -40,20 +40,20 @@ while True:
         except:
                 None
 
-# while True:
-#         try:
-#                 court = driver.find_element(By.XPATH, "//span[text()=' Badminton Court Gym 4']")
-#                 print("fdsafdasfsdafsdafsadfasd")
-#                 break
-#         except:
-#                 print("something wrong")
-# court.click()
-# while True:
-#         try:
-#                 book_date_ele = driver.find_element(By.ID, "Booking_BookingDate")
-#                 break
-#         except:
-#                 print("5555555555555")
-# book_date_ele.clear()
-# book_date_ele.send_keys("15/01/2023")
+while True:
+        try:
+                court = driver.find_element(By.XPATH, "//span[text()=' Badminton Court Gym 4']")
+                print("fdsafdasfsdafsdafsadfasd")
+                break
+        except:
+                print("something wrong")
+court.click()
+while True:
+        try:
+                book_date_ele = driver.find_element(By.ID, "Booking_BookingDate")
+                break
+        except:
+                print("5555555555555")
+book_date_ele.clear()
+book_date_ele.send_keys("15/01/2023")
 
