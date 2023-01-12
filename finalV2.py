@@ -5,10 +5,10 @@ import time
 from selenium.webdriver.support.wait import WebDriverWait
 
 #17:00 = 1, 18:00 = 2, 19:00 = 3, 20:00 = 4
-time_code = 1
+time_code = 2
 
 #Row of court in website. Ex. Court 3 is row 2, Court 6 is row 4
-court_row = 5
+court_row = 1
 
 #DD/M/YYYY
 date_format = "14/1/2023"
@@ -89,6 +89,20 @@ while not button.is_enabled():
         # time.sleep(0.5)
         # button = driver.find_element(By.XPATH, "/html/body/app-root/ng-component/div/default-layout/div/div/div[2]/div[2]/ng-component/div/div/div[3]/div[2]/div/div[{x}]/div[1]/div[2]/div[2]/div[2]/button[{y}]".format(x=court_row,y=time_code))
         button = WebDriverWait(driver, timeout=3).until(lambda d: d.find_element(By.XPATH, "/html/body/app-root/ng-component/div/default-layout/div/div/div[2]/div[2]/ng-component/div/div/div[3]/div[2]/div/div[{x}]/div[1]/div[2]/div[2]/div[2]/button[{y}]".format(x=court_row,y=time_code)))
-button.click()
+button = WebDriverWait(driver, timeout=3).until(lambda d: d.find_element(By.XPATH, "/html/body/app-root/ng-component/div/default-layout/div/div/div[2]/div[2]/ng-component/div/div/div[3]/div[2]/div/div[{x}]/div[1]/div[2]/div[2]/div[2]/button[{y}]".format(x=court_row,y=time_code)))
+while not button.is_enabled():
+        None
+while True:
+        try:
+                button.click()
+                break
+        except:
+                None
 confirm = WebDriverWait(driver, timeout=3).until(lambda d: d.find_element(By.XPATH, "/html/body/app-root/ng-component/div/default-layout/div/div/div[2]/div[2]/ng-component/div/confirmmodal/div/div/div/div/div/a[2]"))
-confirm.click()
+while True:
+        try:
+                confirm.click()
+                break
+        except:
+                None
+                
