@@ -5,17 +5,17 @@ import time
 from selenium.webdriver.support.wait import WebDriverWait
 
 #17:00 = 1, 18:00 = 2, 19:00 = 3, 20:00 = 4
-time_code = 2
+time_code = 1
 
 #Row of court in website. Ex. Court 3 is row 2, Court 6 is row 4
-court_row = 1
+court_row = 8
 
 #DD/M/YYYY
 date_format = "14/1/2023"
 
 #ID/PASS for website
-id = "6422782100"
-passwd = "1102200185194"
+id = "#############################"
+passwd = "############################"
 
 
 options = Options()
@@ -39,7 +39,15 @@ while True:
                 break
         except:
                 None
-time.sleep(1.5)               
+time.sleep(1.5)
+WebDriverWait(driver, timeout=3).until(lambda d: d.find_element(By.XPATH, '//*[@id="onetrust-accept-btn-handler"]')).click()
+# while True:
+#         try:
+#                 cookie_bt = driver.find_element(By.XPATH,'//*[@id="onetrust-accept-btn-handler"]')     
+#                 break
+#         except:
+#                 None
+# cookie_bt.click()  
 username_ele.clear()
 username_ele.send_keys(id)
 passwd_ele.clear()
@@ -105,4 +113,3 @@ while True:
                 break
         except:
                 None
-                
