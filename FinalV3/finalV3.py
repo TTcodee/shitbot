@@ -5,23 +5,15 @@ import time
 from selenium.webdriver.support.wait import WebDriverWait
 import sys
 
-#17:00 = 1, 18:00 = 2, 19:00 = 3, 20:00 = 4
-# time_code = int(sys.argv[4])
-# time_code = 2
-
-#Row of court in website. Ex. Court 3 is row 2, Court 6 is row 4
-# court_row = int(sys.argv[3])
-# court_row = 1
-
-#DD/M/YYYY
-date_format = sys.argv[5]
-# date_format = "18/01/2023"
-
 #ID/PASS for website
 id = sys.argv[1]
 passwd = sys.argv[2]
-# id = 6422782100
-# passwd = 1102200185194
+# court number
+court_number = "Badminton Court {x}".format(x = str(sys.argv[3]))
+# time
+t = sys.argv[4]
+# date_format = "18/01/2023"
+date_format = sys.argv[5]
 
 options = Options()
 options.page_load_strategy = 'eager'
@@ -29,8 +21,6 @@ options.page_load_strategy = 'eager'
 driver = webdriver.Firefox(options=options)
 driver.get("https://bookyourcourt.psm.tu.ac.th/app/main/bookings/home")
 
-court_number = "Badminton Court {x}".format(x = str(sys.argv[3]))
-t = sys.argv[4]
 
 
 while True:
@@ -105,7 +95,7 @@ button = WebDriverWait(driver, timeout=3).until(lambda d: d.find_element(By.XPAT
 while not button.is_enabled():
         print(button.is_enabled())
         search_button.click()
-        # time.sleep(0.5)
+        # time.sleep(30)
         # button = driver.find_element(By.XPATH, "/html/body/app-root/ng-component/div/default-layout/div/div/div[2]/div[2]/ng-component/div/div/div[4]/div[2]/div/div[{x}]/div[1]/div[2]/div[2]/div[2]/button[{y}]".format(x=court_row,y=time_code))
         button = WebDriverWait(driver, timeout=3).until(lambda d: d.find_element(By.XPATH, '//button[contains(text(), "{x}")]'.format(x=t)))
 button = WebDriverWait(driver, timeout=3).until(lambda d: d.find_element(By.XPATH, '//button[contains(text(), "{x}")]'.format(x=t)))
